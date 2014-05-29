@@ -1,8 +1,6 @@
 module AwesomeSausage::ActiveRecord
   extend ::ActiveSupport::Concern
 
-  AS = AwesomeSausage
-
   included do |base|
     raise TypeError.new('AwesomeSausage::ActiveRecord must be included from a subclass of ActiveRecord::Base') unless base <= ::ActiveRecord::Base
     STDERR.puts 'Monkey-patching ActiveRecord::Base with AwesomeSausage::ActiveRecord...' if base == ::ActiveRecord::Base
